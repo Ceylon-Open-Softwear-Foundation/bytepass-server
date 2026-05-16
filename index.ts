@@ -10,8 +10,9 @@ const port = process.env.PORT;
 
 mongoose.connect(mongodbURI!).then(() => {
     console.log("Database connected successfully!");
+}).catch(() => {
+    console.log("Something went wrong while connecting to the database!");
 });
-
 app.listen(port, () => {
     console.log(`Server is Running on the port: ${port}`);
 });
